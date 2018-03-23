@@ -11,7 +11,7 @@ import UIKit
 protocol RatingBarDelegate:class {
     func ratingChanged(_ ratingBar:WNRatingBar,newRating:Float)
 }
-public class WNRatingBar: UIView {
+open class WNRatingBar: UIView {
     weak var delegate:RatingBarDelegate?
     
     var starRating:Float?
@@ -149,16 +149,16 @@ public class WNRatingBar: UIView {
         return starRating!
     }
     //手势
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         self.touchesRating(touches as NSSet)
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
         self.touchesRating(touches as NSSet)
     }
