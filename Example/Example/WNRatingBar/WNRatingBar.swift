@@ -8,10 +8,10 @@
 
 import UIKit
 
-protocol RatingBarDelegate:class {
+public protocol RatingBarDelegate:class {
     func ratingChanged(_ ratingBar:WNRatingBar,newRating:Float)
 }
-open class WNRatingBar: UIView {
+public class WNRatingBar: UIView {
     weak var delegate:RatingBarDelegate?
     
     var starRating:Float?
@@ -30,14 +30,14 @@ open class WNRatingBar: UIView {
     var s4:UIImageView?
     var s5:UIImageView?
     //是否是指示器 默认 true，表示用来显示，不用来打分
-    var isIndicator:Bool = true
+    public var isIndicator:Bool = true
     /**设置星星显示状态
      deselectedName   满星图片名
      halfSelectedName 半星图片名
      fullSelectedName 空星图片名
      starSideLength   星星边长
      */
-    func setSeletedState(_ deselectedName:String?,halfSelectedName:String?,fullSelectedName:String?,starSideLength:CGFloat, delegate:RatingBarDelegate){
+    public func setSeletedState(_ deselectedName:String?,halfSelectedName:String?,fullSelectedName:String?,starSideLength:CGFloat, delegate:RatingBarDelegate){
         self.delegate = delegate
         unSelectedImage = UIImage(named: deselectedName!)
         fullSelectedImage = UIImage(named: fullSelectedName!)
@@ -101,7 +101,7 @@ open class WNRatingBar: UIView {
         self.addSubview(s5!)
     }
     //设置评分值
-    func displayRating(_ rating:Float){
+    public func displayRating(_ rating:Float){
         s1?.image = unSelectedImage
         s2?.image = unSelectedImage
         s3?.image = unSelectedImage
@@ -149,16 +149,16 @@ open class WNRatingBar: UIView {
         return starRating!
     }
     //手势
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
     }
     
-    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         self.touchesRating(touches as NSSet)
     }
     
-    override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
         self.touchesRating(touches as NSSet)
     }
@@ -203,4 +203,3 @@ open class WNRatingBar: UIView {
     }
     
 }
-

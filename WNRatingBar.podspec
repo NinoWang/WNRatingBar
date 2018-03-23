@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
  s.name         = "WNRatingBar"
- s.version      = "1.0.3"
+ s.version      = "1.0.4"
  s.ios.deployment_target = "7.0"
  s.summary      = "swift 五星评分器"
  s.homepage     = "https://github.com/NinoWang/WNRatingBar"
