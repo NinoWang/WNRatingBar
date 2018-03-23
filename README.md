@@ -3,7 +3,7 @@
 
 This is a five-star rating display, it can used to show rating and to score for something.
 ## Feature
-WNRatingBar can used to show rating and to score for something,Like the following example.
+WNRatingBar can used to show rating and to score for something,Like the following example.<br> 
 ![Alt text](https://github.com/NinoWang/WNRatingBar/raw/master/imgs/2.gif)
 
 ## Installation
