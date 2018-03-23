@@ -11,7 +11,7 @@ import UIKit
 protocol RatingBarDelegate:class {
     func ratingChanged(_ ratingBar:WNRatingBar,newRating:Float)
 }
-class WNRatingBar: UIView {
+public class WNRatingBar: UIView {
     weak var delegate:RatingBarDelegate?
     
     var starRating:Float?
